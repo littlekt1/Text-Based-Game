@@ -28,10 +28,10 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java/ZombieTest.java" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/pom.xml" />
     <property name="settings.editor.selected.configurable" value="preferences.updates" />
   </component>
-  <component name="RunManager" selected="Application.ZombieGame">
+  <component name="RunManager" selected="Application.ZombieTest">
     <configuration name="ZombieGame" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ZombieGame" />
       <module name="Zombie Game" />
@@ -41,15 +41,15 @@
     </configuration>
     <configuration name="ZombieTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ZombieTest" />
-      <module name="Zombie Game" />
+      <module name="Text-Based-Game" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.ZombieGame" />
         <item itemvalue="Application.ZombieTest" />
+        <item itemvalue="Application.ZombieGame" />
       </list>
     </recent_temporary>
   </component>

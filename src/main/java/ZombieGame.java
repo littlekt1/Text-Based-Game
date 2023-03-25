@@ -29,12 +29,11 @@ public class ZombieGame {
             }
             if (userInput == 2) {
                 System.out.println("You walk to the window and look out. You see a military envoy setting up a blockade outside. \n");
-                firstOptions();
-                userInput = scanner.nextInt();
-                if (userInput == 2) {
-                    System.out.println("You're already at the window. \n");
+                while (userInput == 2) {
                     firstOptions();
                     userInput = scanner.nextInt();
+                    if (userInput != 2) { break; }
+                    System.out.println("You're already at the window. \n");
                 }
             }
             if (userInput == 3 && !hasPistol) {

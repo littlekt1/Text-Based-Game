@@ -1,3 +1,4 @@
+import java.sql.SQLOutput;
 import java.util.Scanner;
 
 public class ZombieTest {
@@ -28,12 +29,11 @@ public class ZombieTest {
             }
             if (userInput == 2) {
                 System.out.println("You walk to the window and look out. You see a military envoy setting up a blockade outside. \n");
-                firstOptions();
-                userInput = scanner.nextInt();
-                if (userInput == 2) {
-                    System.out.println("You're already at the window. \n");
+                while (userInput == 2) {
                     firstOptions();
                     userInput = scanner.nextInt();
+                    if (userInput != 2) { break; }
+                    System.out.println("You're already at the window. \n");
                 }
             }
             if (userInput == 3 && !hasPistol) {
@@ -41,11 +41,10 @@ public class ZombieTest {
                 hasPistol = true;
                 firstOptions();
                 userInput = scanner.nextInt();
-            }else if (userInput == 3 && hasPistol) {
-                    System.out.println("You've already searched the room. \n");
-                    firstOptions();
-                    userInput = scanner.nextInt();
-
+            } else if (userInput == 3 && hasPistol) {
+                System.out.println("You've already searched the room. \n");
+                firstOptions();
+                userInput = scanner.nextInt();
             }
             if (userInput == 4) {
                 System.out.println("You tuck your knees and curl into a ball under the bed sobbing vigorously. \n");
