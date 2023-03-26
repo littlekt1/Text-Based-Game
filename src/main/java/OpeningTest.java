@@ -1,7 +1,6 @@
-import java.sql.SQLOutput;
 import java.util.Scanner;
 
-public class ZombieTest {
+public class OpeningTest {
     public static void firstOptions() {
         System.out.println("[1] Go to the door. ");
         System.out.println("[2] Go to the window. ");
