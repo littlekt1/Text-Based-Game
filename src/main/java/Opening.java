@@ -25,7 +25,7 @@ public class Opening {
                             "To your left, you see flickering lights, and a staircase leading up. \n" +
                             "To your right, you see a brightly lit corridor, and a staircase leading down. \n" +
                             "Directly across from you, there is a reception area with several bloody streaks across the large counter, trailing into the back office. ");
-
+                    player.setCurrentLocation(5);
                     break;
 
                 }

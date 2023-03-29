@@ -6,12 +6,18 @@ public class Player {
     private List<Item> inventory = new ArrayList<>();
     private String name;
     private int dexterity, strength, intelligence;
+    private int currentLocation;
+    private boolean isAlive = true;
 
     public Player(String name) {
         this.name = name;
         this.dexterity = 1;
         this.strength = 1;
         this.intelligence = 1;
+        this.currentLocation = 0;
+        this.isAlive = true;
+
+
       //  this.inventory = getInventory();
     }
 
@@ -47,6 +53,14 @@ public class Player {
         this.intelligence = intelligence;
     }
 
+    public int getCurrentLocation() {
+        return currentLocation;
+    }
+
+    public void setCurrentLocation(int currentLocation) {
+        this.currentLocation = currentLocation;
+    }
+
     public void getInventory() {
         for (int i = 0; i < inventory.size(); i++) {
             System.out.println("[" + (i+1) + "] " + inventory.get(i).getItemName() + "\n" + "\n");
@@ -60,4 +74,6 @@ public class Player {
     public List<Item> getInventoryList() {
         return inventory;
     }
+
+//    player location & infection counter
 }

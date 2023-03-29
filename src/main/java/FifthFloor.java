@@ -4,6 +4,9 @@ public class FifthFloor {
     public static Application application = new Application();
     public static Scanner scanner = new Scanner(System.in); // User input scanner
     public static int userInput;
+//    public static int floor = 5;
+
+
     public static void firstOptions() { //first options user is presented
         System.out.println("[1] Go left.");
         System.out.println("[2] Go right.");

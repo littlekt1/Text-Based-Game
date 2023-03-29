@@ -10,10 +10,14 @@ public class Application {
         game.run();
     }
     public void run (){
+//        while(!gameover// player is alive), move player
         startGame();
         createPlayer();
-        Opening.runOpening(player);
-        FifthFloor.runFifthFloor(player); // Adds the player object to the fifth floor
+
+//        Opening.runOpening(player);
+//        FifthFloor.runFifthFloor(player); // Adds the player object to the fifth floor
+//        one run method(interface) that applies to all the different superclass-floors
+//        the run method itself will contain a check for whether the player is alive
     //    System.out.println(Opening.player.getName());
     }
     public void floors() {
@@ -24,6 +28,7 @@ public class Application {
         System.out.println(" \n".repeat(50)); // getting it to clear the console 50 lines
         //System.out.print("\033[H\033[2J");
         //System.out.flush();
+
     }
     public static void createPlayer() {
         int strengthCount = 1;
@@ -100,6 +105,9 @@ public class Application {
         player.setStrength(strengthCount);
         player.setDexterity(dexterityCount);
         player.setIntelligence(intelligenceCount);
+        while(true) {
+            Controller.move(player);
+        }
     }
     public void deadEnd() {
         System.out.println("Game Over \n" +
@@ -108,12 +116,14 @@ public class Application {
         System.out.println("[2] No");
         int userChoice = scanner.nextInt();
         if (userChoice==1) {
+//            Clear player inventory/data and start fresh
             Application game = new Application();
             game.run();
         }
         else {
             System.out.println("Thanks for playing! ");
         }
+
     }
 
 }
