@@ -1,7 +1,6 @@
 import java.util.Scanner;
 
 public class FifthFloor {
-    public static Application application = new Application();
     public static Scanner scanner = new Scanner(System.in); // User input scanner
     public static int userInput;
 //    public static int floor = 5;
@@ -14,9 +13,18 @@ public class FifthFloor {
         System.out.println("[4] Turn back around.");
     }
 
+    public static int pickOption (int options) {
+        String userInput = scanner.nextLine();
+        while (!userInput.equals("1") && !userInput.equals("2") && !userInput.equals(String.valueOf(options - 1)) && !userInput.equals(String.valueOf(options - 2))) {
+            System.out.println("Please input a number from 1 to " + options);
+            userInput = scanner.nextLine();
+        }
+        return Integer.parseInt(userInput);
+    }
+
     public static void runFifthFloor(Player player) {
         firstOptions();
-        userInput = scanner.nextInt(); //prompting an input
+        userInput = pickOption(4);//prompting an input
         leftHallwayLeftRoom2(player);
 
         while (true) {
@@ -49,14 +57,14 @@ public class FifthFloor {
         System.out.println("Do you investigate?");
         System.out.println("[1] Yes. ");
         System.out.println("[2] No. ");
-        userInput = scanner.nextInt();
+        userInput = pickOption(2);
         if (userInput == 1) {
             System.out.println("You approach the cabinet. And the doors fall outward and a writhing corpse lands onto you, pulling and tearing at your flesh. ");
-            if (player.getInventoryList().contains(KeyItems.pistol)) {
+            if (player.getInventory().contains(KeyItems.pistol)) {
                 System.out.println("You quickly draw the pistol you found earlier and shoot the zombie in the head. Its cold, lifeless corpse falls onto you, no longer moving.");
             } else {
                 System.out.println("YOU DIED!");
-                application.deadEnd();
+                Application.deadEnd();
             }
         } if (userInput == 2) {
             System.out.println("You decide to leave it alone. ");

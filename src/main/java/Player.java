@@ -61,7 +61,7 @@ public class Player {
         this.currentLocation = currentLocation;
     }
 
-    public void getInventory() {
+    public void printInventory() {
         for (int i = 0; i < inventory.size(); i++) {
             System.out.println("[" + (i+1) + "] " + inventory.get(i).getItemName() + "\n" + "\n");
         }
@@ -71,9 +71,12 @@ public class Player {
         inventory.add(item);
     }
 
-    public List<Item> getInventoryList() {
+    public List<Item> getInventory() {
         return inventory;
     }
 
-//    player location & infection counter
+    public void setInventory(List<Item> inventory) {
+        this.inventory = inventory;
+    }
+    //    player location & infection counter
 }

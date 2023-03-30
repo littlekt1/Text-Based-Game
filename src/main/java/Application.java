@@ -1,3 +1,4 @@
+import java.util.Collections;
 import java.util.Scanner;
 
 public class Application {
@@ -6,10 +7,9 @@ public class Application {
     public static Player player = new Player("");
 
     public static void main(String[] args) {
-        Application game = new Application();
-        game.run();
+        run();
     }
-    public void run (){
+    public static void run (){
 //        while(!gameover// player is alive), move player
         startGame();
         createPlayer();
@@ -24,12 +24,22 @@ public class Application {
        // Opening opening = new Opening();
     }
     //methods
-    public void startGame() {
+    public static void startGame() {
         System.out.println(" \n".repeat(50)); // getting it to clear the console 50 lines
         //System.out.print("\033[H\033[2J");
         //System.out.flush();
 
     }
+
+    public static int pickOption (int options) {
+        String userInput = scanner.nextLine();
+        while (!userInput.equals("1") && !userInput.equals("2") && !userInput.equals(String.valueOf(options - 1)) && !userInput.equals(String.valueOf(options - 2))) {
+            System.out.println("Please input a number from 1 to " + options);
+            userInput = scanner.nextLine();
+        }
+        return Integer.parseInt(userInput);
+    }
+
     public static void createPlayer() {
         int strengthCount = 1;
         int dexterityCount = 1;
@@ -45,7 +55,7 @@ public class Application {
         System.out.println("[3] Strike up a counter argument about why William Shakespeare is the real villain behind modern illiteracy. "); //Intelligence
 
 
-        int userInput = scanner.nextInt();
+        int userInput = pickOption(3);
         if (userInput == 1) {
             strengthCount++;
         }
@@ -59,7 +69,7 @@ public class Application {
         System.out.println("[1] Power"); // Strength
         System.out.println("[2] Wealth"); // Dexterity
         System.out.println("[3] Wisdom"); // Intelligence
-        userInput = scanner.nextInt();
+        userInput = pickOption(3);
 
         if (userInput == 1) {
             strengthCount++;
@@ -75,7 +85,7 @@ public class Application {
         System.out.println("[1] You start throwing the rocks out of the way to clear a path."); // Strength
         System.out.println("[2] You explore the cave to find another potential exit."); // Dexterity
         System.out.println("[3] You convince the others to dig a way out while you manage their efforts."); // Intelligence
-        userInput = scanner.nextInt();
+        userInput = pickOption(3);
 
         if (userInput == 1) {
             strengthCount++;
@@ -91,7 +101,7 @@ public class Application {
         System.out.println("[1] Maximus from Gladiator"); // Strength
         System.out.println("[2] Legolas from Lord of the Rings"); // Dexterity
         System.out.println("[3] Morpheus from The Matrix Revolutions"); // Intelligence
-        userInput = scanner.nextInt();
+        userInput = pickOption(3);
 
         if (userInput == 1) {
             strengthCount++;
@@ -105,23 +115,24 @@ public class Application {
         player.setStrength(strengthCount);
         player.setDexterity(dexterityCount);
         player.setIntelligence(intelligenceCount);
+        player.getInventory().clear();
         while(true) {
             Controller.move(player);
         }
     }
-    public void deadEnd() {
+    public static void deadEnd() {
         System.out.println("Game Over \n" +
                 "Would you like to start again?");
         System.out.println("[1] Yes");
         System.out.println("[2] No");
-        int userChoice = scanner.nextInt();
-        if (userChoice==1) {
+        int userInput = pickOption(2);
+        if (userInput==1) {
 //            Clear player inventory/data and start fresh
-            Application game = new Application();
-            game.run();
+            run();
         }
         else {
             System.out.println("Thanks for playing! ");
+            System.exit(0);
         }
 
     }
