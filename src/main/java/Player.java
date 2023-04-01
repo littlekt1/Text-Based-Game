@@ -61,6 +61,14 @@ public class Player {
         this.currentLocation = currentLocation;
     }
 
+    public boolean isAlive() {
+        return isAlive;
+    }
+
+    public void setAlive(boolean alive) {
+        isAlive = alive;
+    }
+
     public void printInventory() {
         for (int i = 0; i < inventory.size(); i++) {
             System.out.println("[" + (i+1) + "] " + inventory.get(i).getItemName() + "\n" + "\n");

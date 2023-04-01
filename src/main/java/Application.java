@@ -31,15 +31,6 @@ public class Application {
 
     }
 
-    public static int pickOption (int options) {
-        String userInput = scanner.nextLine();
-        while (!userInput.equals("1") && !userInput.equals("2") && !userInput.equals(String.valueOf(options - 1)) && !userInput.equals(String.valueOf(options))) {
-            System.out.println("Please input a number from 1 to " + options);
-            userInput = scanner.nextLine();
-        }
-        return Integer.parseInt(userInput);
-    }
-
     public static void createPlayer() {
         int strengthCount = 1;
         int dexterityCount = 1;
@@ -55,7 +46,7 @@ public class Application {
         System.out.println("[3] Strike up a counter argument about why William Shakespeare is the real villain behind modern illiteracy. "); //Intelligence
 
 
-        int userInput = pickOption(3);
+        int userInput = Controller.pickOption(3);
         if (userInput == 1) {
             strengthCount++;
         }
@@ -69,7 +60,7 @@ public class Application {
         System.out.println("[1] Power"); // Strength
         System.out.println("[2] Wealth"); // Dexterity
         System.out.println("[3] Wisdom"); // Intelligence
-        userInput = pickOption(3);
+        userInput = Controller.pickOption(3);
 
         if (userInput == 1) {
             strengthCount++;
@@ -85,7 +76,7 @@ public class Application {
         System.out.println("[1] You start throwing the rocks out of the way to clear a path."); // Strength
         System.out.println("[2] You explore the cave to find another potential exit."); // Dexterity
         System.out.println("[3] You convince the others to dig a way out while you manage their efforts."); // Intelligence
-        userInput = pickOption(3);
+        userInput = Controller.pickOption(3);
 
         if (userInput == 1) {
             strengthCount++;
@@ -101,7 +92,7 @@ public class Application {
         System.out.println("[1] Maximus from Gladiator"); // Strength
         System.out.println("[2] Legolas from Lord of the Rings"); // Dexterity
         System.out.println("[3] Morpheus from The Matrix Revolutions"); // Intelligence
-        userInput = pickOption(3);
+        userInput = Controller.pickOption(3);
 
         if (userInput == 1) {
             strengthCount++;
@@ -125,7 +116,7 @@ public class Application {
                 "Would you like to start again?");
         System.out.println("[1] Yes");
         System.out.println("[2] No");
-        int userInput = pickOption(2);
+        int userInput = Controller.pickOption(2);
         if (userInput==1) {
 //            Clear player inventory/data and start fresh
             run();
