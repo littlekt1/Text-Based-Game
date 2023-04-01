@@ -33,7 +33,7 @@ public class Application {
 
     public static int pickOption (int options) {
         String userInput = scanner.nextLine();
-        while (!userInput.equals("1") && !userInput.equals("2") && !userInput.equals(String.valueOf(options - 1)) && !userInput.equals(String.valueOf(options - 2))) {
+        while (!userInput.equals("1") && !userInput.equals("2") && !userInput.equals(String.valueOf(options - 1)) && !userInput.equals(String.valueOf(options))) {
             System.out.println("Please input a number from 1 to " + options);
             userInput = scanner.nextLine();
         }
@@ -138,3 +138,110 @@ public class Application {
     }
 
 }
+//    <?xml version="1.0" encoding="UTF-8"?>
+//<project version="4">
+//<component name="AutoImportSettings">
+//<option name="autoReloadType" value="SELECTIVE" />
+//</component>
+//<component name="ChangeListManager">
+//<list default="true" id="a739b289-48ee-491d-bd5c-50d321b35e93" name="Changes" comment="" />
+//<list default="true" id="18a0f9e6-4edb-4e24-8fd2-10f9003b5191" name="Changes" comment="">
+//<change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+//<change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+//<change beforePath="$PROJECT_DIR$/src/main/java/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Application.java" afterDir="false" />
+//<change beforePath="$PROJECT_DIR$/src/main/java/KeyItems.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/KeyItems.java" afterDir="false" />
+//</list>
+//<option name="SHOW_DIALOG" value="false" />
+//<option name="HIGHLIGHT_CONFLICTS" value="true" />
+//<option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+//<option name="LAST_RESOLUTION" value="IGNORE" />
+//</component>
+//<component name="FileTemplateManagerImpl">
+//<option name="RECENT_TEMPLATES">
+//<list>
+//<option value="Class" />
+//</list>
+//</option>
+//</component>
+//<component name="Git.Settings">
+//<option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+//</component>
+//<component name="MarkdownSettingsMigration">
+//<option name="stateVersion" value="1" />
+//</component>
+//<component name="ProjectId" id="2Nbktw7U9ifwptQnpdphsnMkf2B" />
+//<component name="MavenImportPreferences">
+//<option name="generalSettings">
+//<MavenGeneralSettings>
+//<option name="useMavenConfig" value="true" />
+//</MavenGeneralSettings>
+//</option>
+//</component>
+//<component name="ProjectId" id="2NVk1UrOQTydCM495zrkdvAVYeK" />
+//<component name="ProjectViewState">
+//<option name="hideEmptyMiddlePackages" value="true" />
+//<option name="showLibraryContents" value="true" />
+//</component>
+//<component name="PropertiesComponent">
+//<property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+//<property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+//<property name="last_opened_file_path" value="$PROJECT_DIR$/../../kevin-little-student-code/17_File_IO_Writing/exercise/pom.xml" />
+//<property name="settings.editor.selected.configurable" value="preferences.updates" />
+//</component>
+//<component name="RunManager" selected="Application.Application">
+//<configuration name="Application" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+//<option name="MAIN_CLASS_NAME" value="Application" />
+//<module name="Text-Based-Game" />
+//<method v="2">
+//<option name="Make" enabled="true" />
+//</method>
+//</configuration>
+//<configuration name="OpeningTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+//<option name="MAIN_CLASS_NAME" value="OpeningTest" />
+//<module name="Zombie Game" />
+//<method v="2">
+//<option name="Make" enabled="true" />
+//</method>
+//</configuration>
+//<configuration name="RNG" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+//<option name="MAIN_CLASS_NAME" value="RNG" />
+//<configuration name="ZombieTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+//<option name="MAIN_CLASS_NAME" value="ZombieTest" />
+//<module name="Zombie Game" />
+//<method v="2">
+//<option name="Make" enabled="true" />
+//</method>
+//</configuration>
+//<recent_temporary>
+//<list>
+//<item itemvalue="Application.Application" />
+//<item itemvalue="Application.OpeningTest" />
+//<item itemvalue="Application.RNG" />
+//<item itemvalue="Application.ZombieGame" />
+//<item itemvalue="Application.ZombieTest" />
+//</list>
+//</recent_temporary>
+//</component>
+//<component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+//<component name="TaskManager">
+//<task active="true" id="Default" summary="Default task">
+//<changelist id="a739b289-48ee-491d-bd5c-50d321b35e93" name="Changes" comment="" />
+//<created>1679940388166</created>
+//<option name="number" value="Default" />
+//<option name="presentableId" value="Default" />
+//<updated>1679940388166</updated>
+//</task>
+//<servers />
+//</component>
+//<component name="XDebuggerManager">
+//<breakpoint-manager>
+//<breakpoints>
+//<line-breakpoint enabled="true" type="java-line">
+//<url>file://$PROJECT_DIR$/src/main/java/Application.java</url>
+//<line>47</line>
+//<option name="timeStamp" value="1" />
+//</line-breakpoint>
+//</breakpoints>
+//</breakpoint-manager>
+//</component>
+//</project>

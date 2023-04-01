@@ -15,7 +15,7 @@ public class FifthFloor {
 
     public static int pickOption (int options) {
         String userInput = scanner.nextLine();
-        while (!userInput.equals("1") && !userInput.equals("2") && !userInput.equals(String.valueOf(options - 1)) && !userInput.equals(String.valueOf(options - 2))) {
+        while (!userInput.equals("1") && !userInput.equals("2") && !userInput.equals(String.valueOf(options - 1)) && !userInput.equals(String.valueOf(options))) {
             System.out.println("Please input a number from 1 to " + options);
             userInput = scanner.nextLine();
         }
