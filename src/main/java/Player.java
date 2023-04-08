@@ -11,6 +11,7 @@ public class Player {
     private int dexterity, strength, intelligence;
     private int currentLocation;
     private int poisonLevel = 0;
+    private boolean poisonPaused = false;
     private boolean isAlive = true;
 
     public Player(String name) {
@@ -31,12 +32,24 @@ public class Player {
         System.out.println("You've been infected! Find the antidote before it's too late!");
     }
 
+    public void pausePoison(){
+        poisonPaused = true;
+    }
+
+    public void unpausePoison(){
+        poisonPaused = false;
+    }
+
     public void curePoison(){
         poisonLevel = 0;
         System.out.println("Ah, much better!");
     }
 
     public boolean incrementPoison(){
+        if (poisonPaused) {
+            return false;
+        }
+
         Random rand = new Random();
         int randomNum = rand.nextInt((10 - 1) + 1) + 1;
         if (randomNum > 7){
