@@ -41,7 +41,7 @@ public class Opening {
                     }
                 }
                 if (userInput == 3 && !player.getInventory().contains(KeyItems.pistol)) {
-                    System.out.println("You explore the room and find a pistol. You check the magazine, but it's empty. However, there is one in the chamber. \n");
+                    System.out.println("You explore the room and find a pistol on the table closest to the door and you notice bullet holes in the door to the room. You check the magazine, but it's empty. However, there is one in the chamber. \n");
      //               hasPistol = true;
                     player.addItem(KeyItems.pistol); // adds pistol to the player's list in the inventory.
                     firstOptions();

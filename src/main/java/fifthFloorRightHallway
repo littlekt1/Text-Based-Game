@@ -1,0 +1,46 @@
+
+//RightHallway
+You decide to go right, down the well-lit hallway with several rooms on either side with a staircase leading down at the end.
+[1] Explore the first room on the right.
+[2] Check out the second room on the right.
+[3] Investigate the first door on the left.
+[4] Check out the second door on the left.
+[5] Run past the rooms and head toward staircase.
+[6] Turn back around.
+*
+
+//RR1
+You enter the room, this one is actually rather clean aside from some small blood drops on the floor leading to an observation table.
+[1] Walk up to the observation table.
+[2] Leave, you don't feel like observing anything today.
+You pick up a patient file left on the table. It has a handwritten note that states the patient bit three nurses and a doctor before we realized what was going on, but by then it was too late.
+This appears to be a room where the first documented patient was infected.
+Initially assumed to be some variant of rabies. Oh how wrong they were.
+*
+
+//RL1
+You see that the door is barricaded off, you hear something banging on the door trying to get out. You try to push the door open, but it doesn't budge. It seems it would be best to just move on.
+*
+
+//Locked room room with many claw marks on the door, key needed from reception area. First intro to keys. Possibly.
+//RR2
+The door is locked, you should return once you've found the key.
+You unlock the door and walk into another standard patient recovery room.
+You find a survivor in the bed who is infected and begs you to find a cure before it’s too late.
+They ask you to hurry to the lab on the third floor stating that the folks at the hospital had been working on a cure there.
+[1] You agree to help.
+[2] Put them out of their misery (using a pillow, gotta save the bullets).
+[3] You leave without saying anything.
+[4] You loot the room before leaving. The infected patient looks at you confused. You feel uncomfortable and leave.
+//(If you choose to go there you find out that they were working on a cure, but they were all infected before they could finish it.
+You can go back to that person later and explain the truth to them, lie to them, or kill them before they become a problem.)
+*
+
+//RL2
+This room has very dim lighting, you're hesitant to enter, but something is drawing you in. You enter, and on the patient bed you
+discover a hot, lady zombie.
+You can either:
+[1] Not be an idiot and shoot it.
+[2] You can be a weirdo, check it out, and get your face bitten off. (Dead end screen says “worth it” with cool guy sunglasses.)
+[3] You can close the door and walk away slowly, you've seen Gremlins 2 and know how this goes.
+*

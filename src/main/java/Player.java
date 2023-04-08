@@ -82,11 +82,12 @@ public class Player {
         }
         if (poisonLevel > 8) {
             System.out.println("Green goo pours out of your wound.");
-            System.out.println("find the antitode immediately or die.");
+            System.out.println("find the antidote immediately or die.");
 
             if (intelligence >= 2) {
                 System.out.println("Your judgement is affected.");
                 intelligence--;
+                strength++;
             }
 
         }
@@ -96,6 +97,7 @@ public class Player {
             if (intelligence >= 2) {
                 System.out.println("Your judgement is affected.");
                 intelligence--;
+                strength++;
             }
         }
 
