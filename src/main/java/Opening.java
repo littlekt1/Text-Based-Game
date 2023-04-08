@@ -18,7 +18,6 @@ public class Opening {
                     "Do you: \n");
             firstOptions();
             int userInput = Controller.pickOption(4);
-
             while (true) {
                 if (userInput == 1) {
                     System.out.println("You walk up to the door. You turn the knob and stumble into the hallway, looking around. \n" +
@@ -31,7 +30,7 @@ public class Opening {
                 }
                 if (userInput == 2) {
                     System.out.println("You walk to the window and look out. You see a military envoy setting up a blockade outside. \n");
-                    while (userInput == 2) {
+                    while (true) {
                         firstOptions();
                         userInput = Controller.pickOption(4);
                         if (userInput != 2) {
@@ -40,13 +39,13 @@ public class Opening {
                         System.out.println("You're already at the window. \n");
                     }
                 }
-                if (userInput == 3 && !player.getInventory().contains(KeyItems.pistol)) {
-                    System.out.println("You explore the room and find a pistol on the table closest to the door and you notice bullet holes in the door to the room. You check the magazine, but it's empty. However, there is one in the chamber. \n");
-     //               hasPistol = true;
-                    player.addItem(KeyItems.pistol); // adds pistol to the player's list in the inventory.
+                if (userInput == 3 && !player.weaponCheck("pistol")) {
+                    System.out.println("You explore the room and find a pistol. You check the magazine, but it's empty. However, there is one in the chamber. \n");
+                    Pistol pistol = new Pistol();
+                    player.addWeapon("pistol", pistol);
                     firstOptions();
                     userInput = Controller.pickOption(4);
-                } else if (userInput == 3 && player.getInventory().contains(KeyItems.pistol)) {
+                } else if (userInput == 3 && player.weaponCheck("pistol")){
                     System.out.println("You've already searched the room. \n");
                     firstOptions();
                     userInput = Controller.pickOption(4);

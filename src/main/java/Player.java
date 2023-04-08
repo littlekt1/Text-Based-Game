@@ -1,12 +1,11 @@
 
-import java.sql.SQLOutput;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Random;
+
+import java.util.*;
 
 public class Player {
     //Instance Variables
-    private List<Item> inventory = new ArrayList<>();
+    private List<String> keys = new ArrayList<>();
+    private Map<String, Weapon>weapons = new HashMap<>();
     private String name;
     private int dexterity, strength, intelligence;
     private int currentLocation;
@@ -174,22 +173,31 @@ public class Player {
         isAlive = alive;
     }
 
-    public void printInventory() {
-        for (int i = 0; i < inventory.size(); i++) {
-            System.out.println("[" + (i+1) + "] " + inventory.get(i).getItemName() + "\n" + "\n");
+    public void addWeapon(String name, Weapon weapon){
+        weapons.put(name, weapon);
+    }
+
+    public void printWeapons(){
+        for (String key: weapons.keySet()){
+            System.out.println(weapons.get(key).getName());
         }
     }
 
-    public void addItem(Item item) {
-        inventory.add(item);
+    public void addKey(String key){
+        keys.add(key);
     }
 
-    public List<Item> getInventory() {
-        return inventory;
+    public List getKeys(){
+        return keys;
     }
 
-    public void setInventory(List<Item> inventory) {
-        this.inventory = inventory;
+    public Map getWeapons(){
+        return weapons;
     }
+    public boolean weaponCheck(String weapon){
+        return weapons.containsKey(weapon);
+    }
+
+
     //    player location & infection counter
 }

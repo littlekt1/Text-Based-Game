@@ -25,6 +25,26 @@ public class Controller {
         }
     }
 
+    public static int pickOption(int options, Player player) {
+        player.handlePoison();
+        while (true) {
+            String userInput = scanner.nextLine();
+            int choice = 0;
+            try {
+                choice = Integer.parseInt(userInput);
+                if (choice > 0 && choice <= options) {
+                    return choice;
+                } else {
+                    throw new NumberFormatException();
+                }
+            } catch (NumberFormatException e) {
+                System.out.println("Please input a number between 1 and " + options);
+            }
+            return choice;
+        }
+    }
+
+
     public static void move(Player player) {
         switch (player.getCurrentLocation()) {
             case 0:
