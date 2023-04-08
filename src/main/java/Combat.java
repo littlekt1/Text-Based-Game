@@ -37,9 +37,9 @@ public class Combat {
         System.out.println("[1] Shoot the zombie\n[2] Attack the zombie with an axe");
         int userInput = scanner.nextInt();
         if(userInput == 1) {
-            if (KeyItems.pistol.hasItem()) {
-                if (pistol.ammo > 0) {
-                    pistol.pistolAttack(player.getDexterity());
+            if (player.getWeapons().containsKey("pistol")) {
+                if (pistol.getAmmo() > 0) {
+                    pistol.attack(player);
                 } else {
                     System.out.println("You pull the trigger, but all you hear is a heart-sinking click" +
                             "as you realize that you're out of ammo. The zombie continues to approach.");
@@ -49,8 +49,8 @@ public class Combat {
             }
         }
         else if (userInput == 2){
-            if (KeyItems.axe.hasItem()){
-                KeyItems.axe.axeAttack(player.getStrength(), player.getDexterity());
+            if (player.getWeapons().containsKey("axe")){
+                KeyItems.axe.attack(player);
             }
             else {
                 System.out.println("You don't have an axe.");

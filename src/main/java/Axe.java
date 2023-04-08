@@ -1,15 +1,18 @@
-public class Axe extends Item {
-    public Axe(String itemName, boolean hasItem) {
-        super(itemName, hasItem);
-        this.setItemName("Axe");
+public class Axe implements Weapon {
+
+    private String name = "Fireman's Axe";
+
+
+    public String getName(){
+        return name;
     }
-    public int axeAttack(int strength, int dexterity){
+    public int attack(Player player){
         int accuracy;
         int damage;
         int critical = 10;
         int miss = 0;
-        damage = strength * 2;
-        accuracy = dexterity * 2;
+        damage = player.getStrength() * 2;
+        accuracy = player.getDexterity() * 2;
         if (accuracy>8) {
             damage = critical;
         } if (accuracy<3) {
