@@ -25,7 +25,7 @@ public class Controller {
         }
     }
 
-    public static int pickOption(int options, Player player) {
+    public static int pickOptionPoison(int options, Player player) {
         player.handlePoison();
         while (true) {
             String userInput = scanner.nextLine();

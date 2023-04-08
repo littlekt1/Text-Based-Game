@@ -22,7 +22,6 @@ public class Combat {
             }
 
         }
-
         if (zombie.getSpeed() == 2){
 
         }
