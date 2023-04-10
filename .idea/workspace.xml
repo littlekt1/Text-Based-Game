@@ -32,7 +32,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$/pom.xml" />
     <property name="settings.editor.selected.configurable" value="preferences.updates" />
   </component>
-  <component name="RunManager" selected="Application.Application">
+  <component name="RunManager" selected="Application.OpeningTest">
     <configuration name="Application" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Application" />
       <module name="Text-Based-Game" />
@@ -42,7 +42,7 @@
     </configuration>
     <configuration name="OpeningTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="OpeningTest" />
-      <module name="Zombie Game" />
+      <module name="Text-Based-Game" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -56,8 +56,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Application" />
         <item itemvalue="Application.OpeningTest" />
+        <item itemvalue="Application.Application" />
         <item itemvalue="Application.RNG" />
       </list>
     </recent_temporary>

@@ -9,7 +9,7 @@ public class Combat {
         int roll = random.nextInt(11); //creates a random int between 0 and 10
 
         if (zombie.getSpeed() == 1){ //check zombie speed to determine how many shots the player gets
-                                    //before being bitten
+            //before being bitten
             System.out.print("A zombie is crawling towards you, ");
             if (roll <=3){
                 System.out.println("dragging its legless corpse in your direction.");
@@ -32,29 +32,18 @@ public class Combat {
 
 
     }
-    public void firstTurn(Player player, Zombie zombie, Pistol pistol){
-        System.out.println("[1] Shoot the zombie\n[2] Attack the zombie with an axe");
-        int userInput = scanner.nextInt();
-        if(userInput == 1) {
-            if (player.getWeapons().containsKey("pistol")) {
-                if (pistol.getAmmo() > 0) {
-                    pistol.attack(player);
-                } else {
-                    System.out.println("You pull the trigger, but all you hear is a heart-sinking click" +
-                            "as you realize that you're out of ammo. The zombie continues to approach.");
-                }
-            } else {
-                System.out.println("You don't have a pistol.");
+    public static void combat(Player player, Zombie zombie){
+        System.out.println("The zombie approaches you.");
+        while (player.isAlive() && !zombie.isDead()) {
+            int damageZombie = player.attack();
+            zombie.getDamaged(damageZombie);
+            if (!zombie.isDead()) {
+                int damagePlayer = zombie.attack();
+                player.getDamaged(damagePlayer);
             }
         }
-        else if (userInput == 2){
-            if (player.getWeapons().containsKey("axe")){
-                KeyItems.axe.attack(player);
-            }
-            else {
-                System.out.println("You don't have an axe.");
-            }
-        }
+
+
     }
 
 }

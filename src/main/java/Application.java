@@ -106,7 +106,7 @@ public class Application {
         player.setStrength(strengthCount);
         player.setDexterity(dexterityCount);
         player.setIntelligence(intelligenceCount);
-        player.getInventory().clear();
+        player.getWeapons().clear();
         while(true) {
             Controller.move(player);
         }
