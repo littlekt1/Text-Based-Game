@@ -41,8 +41,11 @@ public class Combat {
                 int damagePlayer = zombie.attack();
                 player.getDamaged(damagePlayer);
             }
-        }
 
+        }
+        if (!player.isAlive()){
+            Application.deadEnd();
+        }
 
     }
 

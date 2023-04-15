@@ -1,3 +1,4 @@
+import javax.swing.*;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.sql.SQLOutput;
@@ -301,6 +302,25 @@ public class FifthFloor {
                     }
                     System.out.println("You hear a groan from the corpse as it struggles to lift itself up from the floor.");
                     //put first melee combat here
+                    Combat.combat(player, axeNurseZombie);
+                    System.out.println("The undead nurse lies motionless on the floor, its head lying " +
+                            "several feet from its body, a viscous green ooze pouring from its now headless " +
+                            "corpse. Disguisted though you are, you notice a shining keycard attached to " +
+                            "her waist. It seems like it could be useful, but you're also not sure you want " +
+                            "to spend any more time in here than you have to.");
+                    System.out.println("[1] Approach the nurse and steal her key like the little thieving bastard you are.");
+                    System.out.println("[2] Leave the poor woman to rest in peace.");
+                    userInput = Controller.pickOption(2);
+                    if (userInput == 1){
+                        System.out.println("Well, it looks like being an immoral thief pays off today. You loot " +
+                                "the nurse's corpse. You now have a Nurse Key.");
+                        player.addKey("nurse_key");
+                    }
+                    else if (userInput == 2){
+
+                    }
+
+
                 } if (userInput == 2) {
                     System.out.println("You decide to let the nurse rest in peace and leave the room.");
                     return;

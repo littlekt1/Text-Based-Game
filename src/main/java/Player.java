@@ -69,6 +69,7 @@ public class Player {
             System.out.println("You are not long for this world... ");
             System.out.println("ugh");
             isAlive = false;
+            Application.deadEnd();
         } else if (poisonLevel > 8) {
             System.out.println("Green goo pours out of your wound.");
             System.out.println("find the antidote immediately or die.");
@@ -163,20 +164,33 @@ public class Player {
         }
     }
 
-    public void addKey(String key) {
-        keys.add(key);
+    public void addKey(String keyName) {
+        keys.add(keyName);
     }
 
-    public List getKeys() {
+    public List<String> getKeys() {
+        List<String> tempKeys = new ArrayList<>();
+        for (int i = 0; i < keys.size(); i++) {
+            String [] formattedName = keys.get(i).split("_");
+
+
+            tempKeys.add(String.join(" ", )));
+
+        }
         return keys;
     }
 
-    public Map getWeapons() {
+    public Map<String, Weapon> getWeapons() {
         return weapons;
     }
 
     public boolean weaponCheck(String weapon) {
         return weapons.containsKey(weapon);
+    }
+    public boolean keyCheck(String keyName){
+        keyName = keyName.toLowerCase();
+        keyName.replaceAll("^.", "$0");
+        return keys.contains(keyName);
     }
 
     public void pickUpAmmo(int bullets) {
