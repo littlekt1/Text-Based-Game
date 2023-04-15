@@ -107,7 +107,12 @@ public class FifthFloor {
                 receptionArea(player);
             }
             if (userInput == 4) {
-                System.out.println();
+                if (player.weaponCheck("pistol")){
+                    System.out.println("This is where you woke up, you'd be better off moving forward. ");
+                } else {
+                    System.out.println("You return to the room you woke up in. ");
+                    player.setCurrentLocation(0);
+                }
             }
 
         }
@@ -217,18 +222,41 @@ public class FifthFloor {
                 System.out.println("You see that the door is barricaded off, you hear something banging on the door trying to get out. You try to push the door open, but it doesn't budge.");
                 System.out.println("It seems it would be best to just move on.");
             }
-            else if (userInput == 3) { // TO-DO: need a check for key in inventory
+            else if (userInput == 3) { // TO-DO: Need to check if have been to lab after 3rd floor is made
                 if (alreadyRight3 == true) {
+                    System.out.println("You've already been here, this sick, thick, dying man is still here. Sick and dying. ");
 
                 } else {
                     if (player.keyCheck(NURSE_KEY)){
                         System.out.println("You press the keycard you so heartlessly stole from the dead " +
                                 "nurse against the scanner. It beeps and the door swings open. ");
-                        System.out.println("");
-                    }
-                    System.out.println(""); // do a set of alreadyRight3 = true;
+                        System.out.println("There is a bald man with a mustache and glasses laying in the hospital bed up against the center wall of the room. He says his name is " +
+                                "Art Vandalay, but you think his name is probably George. He looks up at you with his cold, weary eyes and asks if you've been bitten.");
+                        System.out.println("[1] Tell him yes. ");
+                        System.out.println("[2] Tell him no. ");
+                        userInput = Controller.pickOption(2);
+                        if (userInput == 1) {
+                            System.out.println("He screams and throws a heart rate monitor at you and continues his volley of objects that should be heavier than they are, until you leave the room.");
 
-                    alreadyRight3 = true;
+                        }
+                        if (userInput == 2) {
+                            System.out.println("He says \" Great, I need your help. There's a lab on the 3rd floor. They were working on a cure, please go get it for me. I'm really sick and " +
+                                    "I need your help. Help me random survivor, you're my only hope. \"");
+                            System.out.println("[1] Accept this noble quest and depart. ");
+                            System.out.println("[2] Ain't nobody got time for that. Punch his thigh and leave. ");
+                            userInput = Controller.pickOption(2);
+                            if (userInput == 1) {
+                                System.out.println("\" Good luck and god speed. \" You leave the room.");
+                            } else if (userInput == 2) {
+                                System.out.println("\" You jerk!! \" You hear him sobbing into his pillow as you leave.");
+                            }
+                        }
+                        alreadyRight3 = true;
+
+                } else {
+                        System.out.println("The door is locked, maybe there's a key somewhere. ");
+
+                    }
                 }
             }
             else if (userInput == 4) {

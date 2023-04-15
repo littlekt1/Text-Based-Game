@@ -2,20 +2,23 @@ import java.util.Scanner;
 
 
 public class Opening {
-   public static Scanner scanner = new Scanner(System.in);
     public static void firstOptions () {
         System.out.println("[1] Go to the door. ");
         System.out.println("[2] Go to the window. ");
         System.out.println("[3] Explore the room. ");
         System.out.println("[4] Hide under the bed. ");
     }
+    public static boolean alreadyHere;
 
     //public static Pistol pistol = new Pistol("Pistol", false);
    public static void runOpening(Player player) { // we put the player we created in Application in here each time we run opening.
-            System.out.println("You wake up in a hospital room, disoriented. The last thing you remember is a car swerving into your lane and it all going black. \n" +
-                    "You look around your room and you see a bloody set of hand-prints on the door window, alarmed, you stand up. Your legs are wobbly from lack of movement for some time. You grab the side of the hospital bed to steady yourself. \n" +
-                    "You pull the IVs out of your arm and stumble forward. \n \n" +
-                    "Do you: \n");
+       if (alreadyHere == false){
+           System.out.println("You wake up in a hospital room, disoriented. The last thing you remember is a car swerving into your lane and it all going black. \n" +
+                   "You look around your room and you see a bloody set of hand-prints on the door window, alarmed, you stand up. Your legs are wobbly from lack of movement for some time. You grab the side of the hospital bed to steady yourself. \n" +
+                   "You pull the IVs out of your arm and stumble forward. \n \n" +
+                   "Do you: \n");
+       } alreadyHere = true;
+
             firstOptions();
             int userInput = Controller.pickOption(4);
             while (true) {
