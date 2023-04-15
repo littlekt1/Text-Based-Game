@@ -8,15 +8,19 @@ import java.util.Scanner;
 public class FifthFloor {
     public static Scanner scanner = new Scanner(System.in); // User input scanner
     public static int userInput;
-    private static boolean alreadyLeft1 = false;
-    private static boolean alreadyLeft2 = false;
-    private static boolean alreadyLeft4 = false;
-    private static boolean alreadyRight1 = false;
-    private static boolean alreadyRight3 = false;
-    private static boolean alreadyReception = false;
-    private static boolean alreadyReceptionInnerOffice = false;
-    private static boolean backOnFloorFive = false;
+    public static boolean alreadyLeft1 = false;
+    public static boolean alreadyLeft2 = false;
+    public static boolean alreadyLeft4 = false;
+    public static boolean alreadyRight1 = false;
+    public static boolean alreadyRight3 = false;
+    public static boolean alreadyReception = false;
+    public static boolean alreadyReceptionInnerOffice = false;
+    public static boolean backOnFloorFive = false;
     public static final String NURSE_KEY = "Nurse's Key";
+    public static final String RED = "\u001B[31m";
+    public static final String ANSI_RESET = "\u001B[0m";
+    public static Zombie axeNurseZombie = new Zombie(1);
+    public static Zombie hotLadyZombie = new Zombie(1);
 
 
 //    public static int floor = 5;
@@ -145,7 +149,7 @@ public class FifthFloor {
         userInput = Controller.pickOption(2);
         if (userInput == 1) {
             System.out.println("You approach the cabinet. And the doors fall outward and a writhing corpse lands onto you, pulling and tearing at your flesh. ");
-            if (player.weaponCheck("pistol")) {
+            if (player.weaponCheck("pistol")) { // Need to do ammo check and subtract ammo if there is any
                 System.out.println("You quickly draw the pistol you found earlier and shoot the zombie in the head. Its cold, lifeless corpse falls onto you, no longer moving.");
                 // Pistol.pistolAttack
                 zombieDead = true;
@@ -240,15 +244,15 @@ public class FifthFloor {
 
                         }
                         if (userInput == 2) {
-                            System.out.println("He says \" Great, I need your help. There's a lab on the 3rd floor. They were working on a cure, please go get it for me. I'm really sick and " +
-                                    "I need your help. Help me random survivor, you're my only hope. \"");
+                            System.out.println("He says \"Great, I need your help. There's a lab on the 3rd floor. They were working on a cure, please go get it for me. I'm really sick and " +
+                                    "I need your help. Help me random survivor, you're my only hope.\"");
                             System.out.println("[1] Accept this noble quest and depart. ");
                             System.out.println("[2] Ain't nobody got time for that. Punch his thigh and leave. ");
                             userInput = Controller.pickOption(2);
                             if (userInput == 1) {
-                                System.out.println("\" Good luck and god speed. \" You leave the room.");
+                                System.out.println("\"Good luck and god speed.\" You leave the room.");
                             } else if (userInput == 2) {
-                                System.out.println("\" You jerk!! \" You hear him sobbing into his pillow as you leave.");
+                                System.out.println("\"You jerk!!\" You hear him sobbing into his pillow as you leave.");
                             }
                         }
                         alreadyRight3 = true;
@@ -260,7 +264,7 @@ public class FifthFloor {
                 }
             }
             else if (userInput == 4) {
-                Zombie hotLadyZombie = new Zombie(1);
+
                     if (hotLadyZombie.isDead()) {
                     System.out.println("You don't want to have to relive the trauma of killing the only chance you ever had at true love.");
                 }
@@ -304,7 +308,6 @@ public class FifthFloor {
         }
     }
     public static void receptionArea(Player player) {
-        Zombie axeNurseZombie = new Zombie(1);
         while (player.getCurrentLocation()==5) {
             System.out.println("You approach what appears to be a receptionist desk, used by the nurses and staff on this floor. There is a door leading into a rear office along with a desk that has some papers on it.");
             System.out.println("[1] Look at the papers on the desk.");
@@ -312,10 +315,10 @@ public class FifthFloor {
             userInput = Controller.pickOption(2);
             if (userInput == 1) {
                 System.out.println("You pick up the papers from the desk. There are some frantic scribbles from presumably one of the nurses that detail the different exit routes from the hospital.");
-                System.out.println("[1] Front door. (a side note from the nurse states this is the most obvious, but getting there might be a challenge.");
-                System.out.println("[2] Parking Garage. (a side note from the nurse says there is an employee/emergency vehicle access gate that can be opened using an employee key.");
-                System.out.println("[3] Sewer Access. (a side note from the nurse lists this as only viable if you're extremely desperate you mignt be able to find access to the sewer system.");
-                System.out.println("[4] Executive Exit Route. (a side note from the nurse lists this as one of the ways the hospital owner gets to and from his office without taking the elevator or stairs.");
+                System.out.println(RED + "||FRONT DOOR:\n||a side note from the nurse states this is the most obvious, but getting there might be a challenge.");
+                System.out.println("||PARKING GARAGE:\n||a side note from the nurse says there is an employee/emergency vehicle access gate that can be opened using an employee key.");
+                System.out.println("||SEWER ACCESS:\n||a side note from the nurse lists this as only viable if you're extremely desperate you mignt be able to find access to the sewer system.");
+                System.out.println("||EXECUTIVE EXIT ROUTE:\n||a side note from the nurse lists this as one of the ways the hospital owner gets to and from his office without taking the elevator or stairs. \n" + ANSI_RESET);
             }
             if (userInput==2) {
                 System.out.println("You head toward the office, noticing a bloody set of fingerprints on the door knob. You brave forward and open the door.");

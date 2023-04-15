@@ -1,3 +1,5 @@
+import java.util.Random;
+
 public class Axe implements Weapon {
 
     private String name = "Fireman's Axe";
@@ -24,8 +26,15 @@ public class Axe implements Weapon {
             System.out.println("Your axe connects with your foe. ");
         }
         if (accuracy < 3) {
-            damage = miss;
-            System.out.println("Your axe hits nothing but air. ");
+            Random rand = new Random();
+            int num = rand.nextInt(2) +1;
+            if (num ==1) {
+                damage = miss;
+                System.out.println("Your axe hits nothing but air. ");
+            } else {
+             damage = damage/2;
+                System.out.println("You get a glancing hit on the zombie.");
+            }
         } else {
             System.out.println("You graze your foe with the axe, slowing it down. ");
         }

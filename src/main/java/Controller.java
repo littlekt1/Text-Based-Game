@@ -21,15 +21,15 @@ public class Controller {
             } catch (NumberFormatException e) {
                 System.out.println("Please input a number between 1 and " + options);
             }
-            return choice;
         }
     }
 
     public static int pickOption2(int options, Player player) {
         player.handlePoison();
+        int choice = 0;
         while (true) {
             String userInput = scanner.nextLine();
-            int choice = 0;
+
             try {
                 choice = Integer.parseInt(userInput);
                 if (choice > 0 && choice <= options) {
@@ -40,7 +40,7 @@ public class Controller {
             } catch (NumberFormatException e) {
                 System.out.println("Please input a number between 1 and " + options);
             }
-            return choice;
+
         }
     }
 

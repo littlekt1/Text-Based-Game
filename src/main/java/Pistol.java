@@ -20,7 +20,7 @@ public class Pistol implements Weapon {
 
     public int getDamage(int strength, int dexterity) {
         if (ammo <= 0) {
-            System.out.println("You pull the trigger, but all you hear is a heart-sinking click" +
+            System.out.println("You pull the trigger, but all you hear is a heart-sinking click " +
                     "as you realize that you're out of ammo. ");
             return 0;
         }

@@ -8,7 +8,7 @@ public class Opening {
         System.out.println("[3] Explore the room. ");
         System.out.println("[4] Hide under the bed. ");
     }
-    public static boolean alreadyHere;
+    public static boolean alreadyHere = false;
 
     //public static Pistol pistol = new Pistol("Pistol", false);
    public static void runOpening(Player player) { // we put the player we created in Application in here each time we run opening.

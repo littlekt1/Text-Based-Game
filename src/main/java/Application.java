@@ -1,3 +1,5 @@
+import jdk.jshell.execution.Util;
+
 import java.util.Collections;
 import java.util.Scanner;
 
@@ -7,7 +9,9 @@ public class Application {
     public static Player player = new Player("");
 
     public static void main(String[] args) {
+        Utility.populateList();
         run();
+
     }
     public static void run (){
 //        while(!gameover// player is alive), move player
@@ -119,6 +123,7 @@ public class Application {
         int userInput = Controller.pickOption(2);
         if (userInput==1) {
 //            Clear player inventory/data and start fresh
+            Utility.resetAlreadyHere();
             run();
         }
         else {
