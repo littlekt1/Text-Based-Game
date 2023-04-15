@@ -11,6 +11,7 @@ public class Player {
     private int health = 25;
     private boolean poisonPaused = false;
     private boolean isAlive = true;
+    private boolean hasVest;
 
     public Player(String name) {
         this.name = name;
@@ -194,6 +195,22 @@ public class Player {
     public boolean keyCheck(String keyName){
         return keys.contains(keyName);
     }
+
+    public void findVest(){
+        //we could put a sout here explaining the vest...
+        hasVest = true;
+    }
+
+    public void useVest(){
+        //sout explaining the vest is broken and gone...
+        hasVest = false;
+    }
+
+    public boolean hasVest(){
+        return hasVest;
+    }
+
+
 
     public void pickUpAmmo(int bullets) {
         if (weaponCheck("pistol")) {
