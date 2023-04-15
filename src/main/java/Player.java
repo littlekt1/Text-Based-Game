@@ -172,12 +172,15 @@ public class Player {
         List<String> tempKeys = new ArrayList<>();
         for (int i = 0; i < keys.size(); i++) {
             String [] formattedName = keys.get(i).split("_");
+            for (int j = 0; j < formattedName.length; j++) {
+                formattedName[j] = formattedName[j].substring(0,1).toUpperCase() + formattedName[j].substring(1).toLowerCase();
+            }
 
-
-            tempKeys.add(String.join(" ", )));
+            tempKeys.add(String.join(" ", formattedName));
 
         }
-        return keys;
+        System.out.println(tempKeys);
+        return tempKeys;
     }
 
     public Map<String, Weapon> getWeapons() {
@@ -187,9 +190,8 @@ public class Player {
     public boolean weaponCheck(String weapon) {
         return weapons.containsKey(weapon);
     }
+
     public boolean keyCheck(String keyName){
-        keyName = keyName.toLowerCase();
-        keyName.replaceAll("^.", "$0");
         return keys.contains(keyName);
     }
 

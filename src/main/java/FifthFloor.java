@@ -16,6 +16,8 @@ public class FifthFloor {
     private static boolean alreadyReception = false;
     private static boolean alreadyReceptionInnerOffice = false;
     private static boolean backOnFloorFive = false;
+    public static final String NURSE_KEY = "Nurse's Key";
+
 
 //    public static int floor = 5;
 
@@ -219,7 +221,14 @@ public class FifthFloor {
                 if (alreadyRight3 == true) {
 
                 } else {
+                    if (player.keyCheck(NURSE_KEY)){
+                        System.out.println("You press the keycard you so heartlessly stole from the dead " +
+                                "nurse against the scanner. It beeps and the door swings open. ");
+                        System.out.println("");
+                    }
                     System.out.println(""); // do a set of alreadyRight3 = true;
+
+                    alreadyRight3 = true;
                 }
             }
             else if (userInput == 4) {
@@ -300,6 +309,7 @@ public class FifthFloor {
                     if (player.getDexterity() < 2) {
                         System.out.println("You fall back pulling the axe out and are on the floor watching as the corpse lifts itself off the floor turning towards you.");
                     }
+                    player.addWeapon("axe", new Axe());
                     System.out.println("You hear a groan from the corpse as it struggles to lift itself up from the floor.");
                     //put first melee combat here
                     Combat.combat(player, axeNurseZombie);
@@ -314,10 +324,12 @@ public class FifthFloor {
                     if (userInput == 1){
                         System.out.println("Well, it looks like being an immoral thief pays off today. You loot " +
                                 "the nurse's corpse. You now have a Nurse Key.");
-                        player.addKey("nurse_key");
+                        player.addKey(NURSE_KEY);
+                        return;
                     }
                     else if (userInput == 2){
-
+                        System.out.println("You leave the office with the axe in hand feeling good about yourself " +
+                                "for not looting an innocent young woman's corpse.");
                     }
 
 

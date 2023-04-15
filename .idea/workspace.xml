@@ -6,10 +6,13 @@
   <component name="ChangeListManager">
     <list default="true" id="a739b289-48ee-491d-bd5c-50d321b35e93" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Combat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Combat.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/FifthFloor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/FifthFloor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/OpeningTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Test/java/OpeningTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Combat.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Combat.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FifthFloor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/FifthFloor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/OpeningTest.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Player.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -20,8 +23,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -36,12 +39,17 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "last_opened_file_path": "C:/Users/user/sideprojects/GitHub/Text-Based-Game/pom.xml"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/user/sideprojects/GitHub/Text-Based-Game/pom.xml&quot;
   }
-}]]></component>
-  <component name="RunManager" selected="Application.OpeningTest">
+}</component>
+  <component name="RecentsManager">
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JUnit.KeyTest.keyTest">
     <configuration name="Application" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Application" />
       <module name="Text-Based-Game" />
@@ -63,8 +71,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="KeyTest.keyTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Text-Based-Game" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="KeyTest" />
+      <option name="METHOD_NAME" value="keyTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.KeyTest.keyTest" />
         <item itemvalue="Application.OpeningTest" />
         <item itemvalue="Application.Application" />
         <item itemvalue="Application.RNG" />
