@@ -34,6 +34,7 @@ public class FifthFloor {
     }
 
     public static void leftHallwayOptions() {
+        System.out.println("You're in the left hallway. ");
         System.out.println("[1] Explore the first room on the left.");
         System.out.println("[2] Explore the second room on the left.");
         System.out.println("[3] Take a gander at the first room on the right.");
@@ -43,6 +44,7 @@ public class FifthFloor {
     }
 
     public static void rightHallwayOptions() {
+        System.out.println("You're in the right hallway. ");
         System.out.println("[1] Explore the first room on the right.");
         System.out.println("[2] Check out the second room on the right.");
         System.out.println("[3] Investigate the first door on the left.");
