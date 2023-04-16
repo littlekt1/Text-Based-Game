@@ -19,6 +19,7 @@ public class Player {
         this.strength = 1;
         this.intelligence = 1;
         this.currentLocation = 0;
+        weapons.put("fist", new Fist());
     }
 
     public void poisonPlayer() {
@@ -246,4 +247,13 @@ public class Player {
             poisonPlayer();
         }
     }
+    public void resetPlayer() {
+        weapons.clear();
+        weapons.put("fist", new Fist());
+        keys.clear();
+        poisonLevel = 0;
+        health = 25;
+        currentLocation = 0;
+    }
+
 }

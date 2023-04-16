@@ -1,3 +1,5 @@
+import java.util.Random;
+
 public class Pistol implements Weapon {
 
     private String name = "Glock 9";
@@ -29,12 +31,19 @@ public class Pistol implements Weapon {
         int miss = 0;
         int accuracy = dexterity * 2;
         if (accuracy < 3) {
-            damage = miss;
-            System.out.println("You graze your foe. ");
-        }
-        if (accuracy > 8) {
+            Random rand = new Random();
+            int num = rand.nextInt(2) +1;
+            if (num == 1) {
+                damage = miss;
+                System.out.println("You graze your foe. ");
+            } else {
+                System.out.println("You hit the zombie with your bullet. ");
+            }
+        } else if (accuracy > 8) {
             damage = critical;
             System.out.println("Nice shot.");
+        } else {
+            System.out.println("You hit the zombie with your bullet. ");
         }
         ammo--;
         if (ammo <= 0) {

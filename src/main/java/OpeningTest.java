@@ -12,8 +12,6 @@ public class OpeningTest {
         Player player = new Player("Quang");
         player.setDexterity(3);
         Zombie zombie = new Zombie(5);
-        player.addWeapon("pistol", new Pistol());
         player.addWeapon("axe", new Axe());
-        Combat.combat(player, zombie);
     }
 }

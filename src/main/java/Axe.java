@@ -10,9 +10,8 @@ public class Axe implements Weapon {
     }
 
     @Override
-    public void pickUpAmmo(int bullets) {
-        return;
-    }
+    public void pickUpAmmo(int bullets) {}
+
 
     public int getDamage(int strength, int dexterity) {
         int accuracy;
@@ -24,15 +23,13 @@ public class Axe implements Weapon {
         if (accuracy > 8) {
             damage = critical;
             System.out.println("Your axe connects with your foe. ");
-        }
-        if (accuracy < 3) {
+        } else if (accuracy < 3) {
             Random rand = new Random();
             int num = rand.nextInt(2) +1;
-            if (num ==1) {
+            if (num == 1) {
                 damage = miss;
                 System.out.println("Your axe hits nothing but air. ");
             } else {
-             damage = damage/2;
                 System.out.println("You get a glancing hit on the zombie.");
             }
         } else {

@@ -1,7 +1,7 @@
 public interface Weapon {
 
-    public int getDamage(int strength, int dexterity);
-    public String getName();
+    int getDamage(int strength, int dexterity);
+    String getName();
     void pickUpAmmo(int bullets);
 
 }

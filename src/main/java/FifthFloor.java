@@ -21,6 +21,7 @@ public class FifthFloor {
     public static final String ANSI_RESET = "\u001B[0m";
     public static Zombie axeNurseZombie = new Zombie(1);
     public static Zombie hotLadyZombie = new Zombie(1);
+    public static Zombie cabinetZombie = new Zombie(1);
 
 
 //    public static int floor = 5;
@@ -53,12 +54,13 @@ public class FifthFloor {
 
 
     public static void runFifthFloor(Player player) {
-        while (player.getCurrentLocation()==5) {
+        while (player.getCurrentLocation() == 5) {
+            System.out.println("You're in the hallway. ");
             firstOptions();
             userInput = Controller.pickOption(4);
             if (userInput == 1) {
                 System.out.println("You decided to go left, heading towards the flickering lights and the staircase heading upwards. There are several other patient rooms on either side of you. ");
-                while (player.getCurrentLocation()==5) {
+                while (player.getCurrentLocation() == 5) {
                     leftHallwayOptions();
                     userInput = Controller.pickOption(6);
                     if (userInput == 1) {
@@ -73,6 +75,7 @@ public class FifthFloor {
                             System.out.println("You refuse to enter this room again.");
                         } else {
                             alreadyLeft2 = leftHallwayLeftRoom2(player);
+                            System.out.println("You leave the room. ");
                         }
                     } else if (userInput == 3) {
                         System.out.println("The door is locked, you give it a slight shove with your shoulder but it doesn't budge.");
@@ -102,16 +105,13 @@ public class FifthFloor {
                     }
                 }
 
-            }
-            if (userInput == 2) {
+            } else if (userInput == 2) {
                 rightHallway(player);
 
-            }
-            if (userInput == 3) {
+            } else if (userInput == 3) {
                 receptionArea(player);
-            }
-            if (userInput == 4) {
-                if (player.weaponCheck("pistol")){
+            } else if (userInput == 4) {
+                if (player.weaponCheck("pistol")) {
                     System.out.println("This is where you woke up, you'd be better off moving forward. ");
                 } else {
                     System.out.println("You return to the room you woke up in. ");
@@ -131,11 +131,9 @@ public class FifthFloor {
             System.out.println("You're unable to read, get frustrated and rip off the paper.");
         }
         System.out.println("You decide to go back out.");
-        return;
     }
 
     public static boolean leftHallwayLeftRoom2(Player player) {
-        boolean zombieDead = false;
         System.out.println("This is another room that looks similar to the others, but you hear a low groan coming from within one of the tall cabinets.");
         if (player.getDexterity() >= 2) {
             System.out.println("You hear what sounds like a feral animal and the faint sound of scratching on the inside of the metal cabinet doors. ");
@@ -148,22 +146,14 @@ public class FifthFloor {
         System.out.println("[2] No. ");
         userInput = Controller.pickOption(2);
         if (userInput == 1) {
-            System.out.println("You approach the cabinet. And the doors fall outward and a writhing corpse lands onto you, pulling and tearing at your flesh. ");
-            if (player.weaponCheck("pistol")) { // Need to do ammo check and subtract ammo if there is any
-                System.out.println("You quickly draw the pistol you found earlier and shoot the zombie in the head. Its cold, lifeless corpse falls onto you, no longer moving.");
-                // Pistol.pistolAttack
-                zombieDead = true;
+            System.out.println("You approach the cabinet. And the doors fall outward and a writhing corpse lands onto you, pulling and tearing at your flesh. " +
+                    "\n You shove it off. ");
+            Combat.combat(player, cabinetZombie);
 
-            } else {
-                System.out.println("YOU DIED!");
-                player.setAlive(false);
-                Application.deadEnd();
-            }
-        }
-        if (userInput == 2) {
+        } else if (userInput == 2) {
             System.out.println("You decide to leave it alone. ");
         }
-        return zombieDead;
+        return cabinetZombie.isDead();
 
     }
 
@@ -199,39 +189,38 @@ public class FifthFloor {
 
     public static void rightHallway(Player player) {
         System.out.println("You decide to go right, down the well-lit hallway with several rooms on either side with a staircase leading down at the end.");
-        while (player.getCurrentLocation()==5) {
+        while (player.getCurrentLocation() == 5) {
             rightHallwayOptions();
             userInput = Controller.pickOption(6);
             if (userInput == 1) {
-                if (alreadyRight1 == true) {
+                if (alreadyRight1) {
                     System.out.println("You've already been here.");
-                }
-                System.out.println("You enter the room, this one is actually rather clean aside from some small blood drops on the floor leading to an observation table.");
-                System.out.println("[1] Walk up to the observation table. ");
-                System.out.println("[2] Leave, you don't feel like observing anything today.");
-                userInput = Controller.pickOption(2);
-                if (userInput == 1) {
-                    System.out.println("You pick up a patient file left on the table. " +
-                            "It has a handwritten note that states the patient bit three nurses and a doctor before we realized what was going on, " +
-                            "but by then it was too late. This appears to be a room where the first documented patient was infected. " +
-                            "Initially assumed to be some variant of rabies.");
-                    System.out.println("There's nothing else of interest here. So you return to the hallway. ");
-                    alreadyRight1=true;
-                }
-                else if (userInput == 2) {
-                    System.out.println("You turn around and scramble out of the room.");
+                } else {
+                    System.out.println("You enter the room, this one is actually rather clean aside from some small blood drops on the floor leading to an observation table.");
+                    System.out.println("[1] Walk up to the observation table. ");
+                    System.out.println("[2] Leave, you don't feel like observing anything today.");
+                    userInput = Controller.pickOption(2);
+                    if (userInput == 1) {
+                        System.out.println("You pick up a patient file left on the table. " +
+                                "It has a handwritten note that states the patient bit three nurses and a doctor before we realized what was going on, " +
+                                "but by then it was too late. This appears to be a room where the first documented patient was infected. " +
+                                "Initially assumed to be some variant of rabies.");
+                        System.out.println("There's nothing else of interest here. So you return to the hallway. ");
+                        alreadyRight1 = true;
+                    } else if (userInput == 2) {
+                        System.out.println("You turn around and scramble out of the room.");
 
+                    }
                 }
-            } else if(userInput == 2) {
+            } else if (userInput == 2) {
                 System.out.println("You see that the door is barricaded off, you hear something banging on the door trying to get out. You try to push the door open, but it doesn't budge.");
                 System.out.println("It seems it would be best to just move on.");
-            }
-            else if (userInput == 3) { // TO-DO: Need to check if have been to lab after 3rd floor is made
-                if (alreadyRight3 == true) {
+            } else if (userInput == 3) { // TO-DO: Need to check if have been to lab after 3rd floor is made
+                if (alreadyRight3) {
                     System.out.println("You've already been here, this sick, thick, dying man is still here. Sick and dying. ");
 
                 } else {
-                    if (player.keyCheck(NURSE_KEY)){
+                    if (player.keyCheck(NURSE_KEY)) {
                         System.out.println("You press the keycard you so heartlessly stole from the dead " +
                                 "nurse against the scanner. It beeps and the door swings open. ");
                         System.out.println("There is a bald man with a mustache and glasses laying in the hospital bed up against the center wall of the room. He says his name is " +
@@ -242,8 +231,7 @@ public class FifthFloor {
                         if (userInput == 1) {
                             System.out.println("He screams and throws a heart rate monitor at you and continues his volley of objects that should be heavier than they are, until you leave the room.");
 
-                        }
-                        if (userInput == 2) {
+                        } else if (userInput == 2) {
                             System.out.println("He says \"Great, I need your help. There's a lab on the 3rd floor. They were working on a cure, please go get it for me. I'm really sick and " +
                                     "I need your help. Help me random survivor, you're my only hope.\"");
                             System.out.println("[1] Accept this noble quest and depart. ");
@@ -256,40 +244,30 @@ public class FifthFloor {
                             }
                         }
                         alreadyRight3 = true;
-
-                } else {
+                    } else {
                         System.out.println("The door is locked, maybe there's a key somewhere. ");
-
                     }
                 }
-            }
-            else if (userInput == 4) {
-
-                    if (hotLadyZombie.isDead()) {
+            } else if (userInput == 4) {
+                if (hotLadyZombie.isDead()) {
                     System.out.println("You don't want to have to relive the trauma of killing the only chance you ever had at true love.");
                 }
                 System.out.println("This room has very dim lighting, you're hesitant to enter, but something is drawing you in. You enter, and on the patient bed you discover a hot, lady zombie.");
                 System.out.println("You can either:");
-                System.out.println("[1] Not be an idiot and shoot it.");
+                System.out.println("[1] Not be an idiot and fight it.");
                 System.out.println("[2] You can be a weirdo, check it out, and get your face bitten off. (Dead end screen says “worth it” with cool guy sunglasses.)");
                 System.out.println("[3] You can close the door and walk away slowly, you've seen Gremlins 2 and know how this goes.");
                 userInput = Controller.pickOption(3);
                 if (userInput == 1) {
-                    System.out.println("You aim your pistol with one bullet in it at the weirdly attractive zombie and fire. It's close enough you'd have to be blind to miss.");
+                    Combat.combat(player, hotLadyZombie);
                     System.out.println("A big fat tear rolls down your cheek as you killed your only hope for love in this hospital. ");
-                    if (player.weaponCheck("pistol")) {
-                        //Insert pistol ammo check.
-                    } hotLadyZombie.setDead();
-                }
-                else if (userInput == 2) {
+                } else if (userInput == 2) {
                     System.out.println("You perform a cat call at the zombie, it blushes and then immediately charges you, eating part of your face.");
                     Application.deadEnd();
-                }
-                else if (userInput == 3) {
+                } else if (userInput == 3) {
                     System.out.println("You very slowly back away from the room, slowly closing the door and place a small chair against the knob, just in case the zombie starts to roam.");
                 }
-            }
-            else if (userInput == 5) {
+            } else if (userInput == 5) {
                 System.out.println("Looking down the well polished staircase with bright, buzzing overhead lights, you question if this is the best path to go. Do you want to go down the stairs?");
                 System.out.println("[1] Yes.");
                 System.out.println("[2] No.");
@@ -297,18 +275,18 @@ public class FifthFloor {
                 if (userInput == 1) {
                     System.out.println("You start walking down the stairs. You hear a low groan behind you that gives you goose pimples all over your spine and rush down the stairs to the fourth floor.");
                     player.setCurrentLocation(4);
-                    return ;
+                    return;
                 } else {
                     System.out.println("You get scared and decide to explore the other options.");
                 }
-            }
-            else if (userInput == 6) {
+            } else if (userInput == 6) {
                 return;
             }
         }
     }
+
     public static void receptionArea(Player player) {
-        while (player.getCurrentLocation()==5) {
+        while (player.getCurrentLocation() == 5) {
             System.out.println("You approach what appears to be a receptionist desk, used by the nurses and staff on this floor. There is a door leading into a rear office along with a desk that has some papers on it.");
             System.out.println("[1] Look at the papers on the desk.");
             System.out.println("[2] Go into the office. ");
@@ -319,21 +297,21 @@ public class FifthFloor {
                 System.out.println("||PARKING GARAGE:\n||a side note from the nurse says there is an employee/emergency vehicle access gate that can be opened using an employee key.");
                 System.out.println("||SEWER ACCESS:\n||a side note from the nurse lists this as only viable if you're extremely desperate you mignt be able to find access to the sewer system.");
                 System.out.println("||EXECUTIVE EXIT ROUTE:\n||a side note from the nurse lists this as one of the ways the hospital owner gets to and from his office without taking the elevator or stairs. \n" + ANSI_RESET);
-            }
-            if (userInput==2) {
+            } else if (userInput == 2) {
                 System.out.println("You head toward the office, noticing a bloody set of fingerprints on the door knob. You brave forward and open the door.");
                 System.out.println("You see an average office area with several computers lining the walls in small desk areas. There is an open area in the center of the room with a bloodied body of a nurse, with an axe sticking out of her back.");
                 System.out.println("[1] Approach the corpse and remove the axe? ");
                 System.out.println("[2] Leave the corpse alone. ");
-                if (player.getIntelligence()>1) {
+                if (player.getIntelligence() > 1) {
                     System.out.println("Something about the corpse makes you feel uneasy.");
-                } if (player.getIntelligence()>=4) {
+                }
+                if (player.getIntelligence() >= 4) {
                     System.out.println("With everything you've seen today, you get the feeling that there's something REALLY off about this corpse.");
                 }
                 userInput = Controller.pickOption(2);
                 if (userInput == 1) {
                     System.out.println("You cautiously approach the corpse and get two hands around the handle of the axe and pull.");
-                    if(player.getStrength() > 1) { // if not enough strength you don't deal damage on removal.
+                    if (player.getStrength() > 1) { // if not enough strength you don't deal damage on removal.
                         axeNurseZombie.setHealth(5);
                     }
                     System.out.println("You managed to pull the axe out of the nurse's back.");
@@ -342,7 +320,6 @@ public class FifthFloor {
                     }
                     player.addWeapon("axe", new Axe());
                     System.out.println("You hear a groan from the corpse as it struggles to lift itself up from the floor.");
-                    //put first melee combat here
                     Combat.combat(player, axeNurseZombie);
                     System.out.println("The undead nurse lies motionless on the floor, its head lying " +
                             "several feet from its body, a viscous green ooze pouring from its now headless " +
@@ -352,19 +329,16 @@ public class FifthFloor {
                     System.out.println("[1] Approach the nurse and steal her key like the little thieving bastard you are.");
                     System.out.println("[2] Leave the poor woman to rest in peace.");
                     userInput = Controller.pickOption(2);
-                    if (userInput == 1){
+                    if (userInput == 1) {
                         System.out.println("Well, it looks like being an immoral thief pays off today. You loot " +
                                 "the nurse's corpse. You now have a Nurse Key.");
                         player.addKey(NURSE_KEY);
-                        return;
-                    }
-                    else if (userInput == 2){
+                    } else if (userInput == 2) {
                         System.out.println("You leave the office with the axe in hand feeling good about yourself " +
                                 "for not looting an innocent young woman's corpse.");
                     }
-
-
-                } if (userInput == 2) {
+                    return;
+                } else if (userInput == 2) {
                     System.out.println("You decide to let the nurse rest in peace and leave the room.");
                     return;
                 }
