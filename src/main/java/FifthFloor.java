@@ -325,7 +325,7 @@ public class FifthFloor {
                     Combat.combat(player, axeNurseZombie);
                     System.out.println("The undead nurse lies motionless on the floor, its head lying " +
                             "several feet from its body, a viscous green ooze pouring from its now headless " +
-                            "corpse. Disguisted though you are, you notice a shining keycard attached to " +
+                            "corpse. Disgusted though you are, you notice a shining keycard attached to " +
                             "her waist. It seems like it could be useful, but you're also not sure you want " +
                             "to spend any more time in here than you have to.");
                     System.out.println("[1] Approach the nurse and steal her key like the little thieving bastard you are.");

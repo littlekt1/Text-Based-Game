@@ -203,7 +203,7 @@ public class Player {
     }
 
     public void useVest(){
-        //sout explaining the vest is broken and gone...
+        System.out.println("Luckily you had a vest so you did not get infected but it's no longer usable.");
         hasVest = false;
     }
 
@@ -242,8 +242,13 @@ public class Player {
     public void getDamaged(int damage) {
         health -= damage;
         Random rand = new Random();
-        int randomNum = rand.nextInt((10 - 1) + 1) + 1;
-        if (randomNum >= 9 && poisonLevel <= 0 && damage>0) {
+        int randomNum = rand.nextInt(10) + 1;
+
+        if (randomNum >= 9 && poisonLevel <= 0 && damage > 0) {
+            if (hasVest()) {
+                useVest();
+                return;
+            }
             poisonPlayer();
         }
     }
@@ -254,6 +259,10 @@ public class Player {
         poisonLevel = 0;
         health = 25;
         currentLocation = 0;
+    }
+    public void nonCombatDamaged(int damage) {
+        health -= damage;
+        System.out.println("You are at " + health + " HP");
     }
 
 }
