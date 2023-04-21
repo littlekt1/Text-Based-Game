@@ -262,6 +262,12 @@ public class Player {
     }
     public void nonCombatDamaged(int damage) {
         health -= damage;
+        if (health<1) {
+            System.out.println("YOU HAVE DIED.");
+            Application.deadEnd();
+            return;
+        }
+        System.out.println("Ouch, I took damage. ");
         System.out.println("You are at " + health + " HP");
     }
 
