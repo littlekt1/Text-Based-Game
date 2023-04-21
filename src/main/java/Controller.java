@@ -10,6 +10,9 @@ public class Controller {
     public static int pickOption(int options) {
         while (true) {
             String userInput = scanner.nextLine();
+            if (userInput.equals("DIE")) {
+                Application.deadEnd();
+            }
             int choice = 0;
             try {
                 choice = Integer.parseInt(userInput);

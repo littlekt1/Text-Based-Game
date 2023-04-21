@@ -13,7 +13,8 @@ public class Application {
         run();
 
     }
-    public static void run (){
+
+    public static void run() {
 //        while(!gameover// player is alive), move player
         startGame();
         createPlayer();
@@ -22,11 +23,31 @@ public class Application {
 //        FifthFloor.runFifthFloor(player); // Adds the player object to the fifth floor
 //        one run method(interface) that applies to all the different superclass-floors
 //        the run method itself will contain a check for whether the player is alive
-    //    System.out.println(Opening.player.getName());
+        //    System.out.println(Opening.player.getName());
+
+//        Application app = new Application();
+//        while (true) {
+//            Player player = new Player("Handsome Grant");
+//            Opening opening = new Opening();
+//            FifthFloor fifthFloor = new FifthFloor();
+//            startGame();
+//            app.createPlayer(player);
+//            while (player.isAlive()) {
+//                switch (player.getCurrentLocation()) {
+//                    case 0:
+//                        opening.runOpening(player);
+//                    case 5:
+//                        fifthFloor.runFifthFloor(player);
+//                }
+//            }
+//            app.deadEnd();
+//        }
     }
+
     public void floors() {
-       // Opening opening = new Opening();
+        // Opening opening = new Opening();
     }
+
     //methods
     public static void startGame() {
         System.out.println(" \n".repeat(50)); // getting it to clear the console 50 lines
@@ -110,23 +131,23 @@ public class Application {
         player.setStrength(strengthCount);
         player.setDexterity(dexterityCount);
         player.setIntelligence(intelligenceCount);
-        player.getWeapons().clear();
-        while(true) {
+        player.resetPlayer();
+        while (true) {
             Controller.move(player);
         }
     }
+
     public static void deadEnd() {
         System.out.println("Game Over \n" +
                 "Would you like to start again?");
         System.out.println("[1] Yes");
         System.out.println("[2] No");
         int userInput = Controller.pickOption(2);
-        if (userInput==1) {
+        if (userInput == 1) {
 //            Clear player inventory/data and start fresh
             Utility.resetAlreadyHere();
             run();
-        }
-        else {
+        } else {
             System.out.println("Thanks for playing! ");
             System.exit(0);
         }
