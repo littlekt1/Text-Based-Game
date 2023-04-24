@@ -49,7 +49,11 @@
       <recent name="C:\Users\Student\workspace\side-projects\Text-Based-Game\src\main\java" />
     </key>
   </component>
+<<<<<<< Updated upstream
   <component name="RunManager" selected="Application.FloorTest">
+=======
+  <component name="RunManager" selected="Application.SixthFloorTest">
+>>>>>>> Stashed changes
     <configuration name="Application" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Application" />
       <module name="Text-Based-Game" />
@@ -78,6 +82,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="SixthFloorTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="SixthFloorTest" />
+      <module name="Text-Based-Game" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Test" />
       <module name="Text-Based-Game" />
@@ -87,7 +98,11 @@
     </configuration>
     <recent_temporary>
       <list>
+<<<<<<< Updated upstream
         <item itemvalue="Application.FloorTest" />
+=======
+        <item itemvalue="Application.SixthFloorTest" />
+>>>>>>> Stashed changes
         <item itemvalue="Application.Application" />
         <item itemvalue="Application.OpeningTest" />
         <item itemvalue="Application.Test" />

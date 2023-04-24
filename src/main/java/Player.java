@@ -22,6 +22,14 @@ public class Player {
         weapons.put("fist", new Fist());
     }
 
+    public int getHealth() {
+        return health;
+    }
+
+    public void setHealth(int health) {
+        this.health = health;
+    }
+
     public void poisonPlayer() {
         poisonLevel = 1;
         System.out.println("You've been infected! Find the antidote before it's too late!");
@@ -219,10 +227,9 @@ public class Player {
         } else {
             System.out.println("You have no use for this right now. ");
         }
-
     }
 
-    public int attack() {
+    public List<Object> attack() {
         handlePoison();
         System.out.println();
         System.out.println("You have the following weapons available. Which would you like to attack with?");
@@ -236,7 +243,8 @@ public class Player {
         int userInput = 0;
         userInput = Controller.pickOption(weapons.size());
         Weapon weaponInUse = weapons.get(weaponsArray[userInput - 1]);
-        return weaponInUse.getDamage(strength, dexterity);
+
+        return Arrays.asList(weaponsArray[userInput - 1], weaponInUse.getDamage(strength, dexterity));
     }
 
     public void getDamaged(int damage) {
