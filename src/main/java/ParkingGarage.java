@@ -44,7 +44,6 @@ public class ParkingGarage {
             } else {
                 player.setCurrentLocation(3);
             }
-
         }
     }
 
