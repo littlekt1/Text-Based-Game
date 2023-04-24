@@ -114,7 +114,6 @@ public class ParkingGarage {
         System.out.println("[5] Go Back.");
     }
 
-
     public static void frontRightParkingGarage(Player player) {
         System.out.println("You decide to approach the police vehicle that has been turned onto its side. ");
         while (true) {
