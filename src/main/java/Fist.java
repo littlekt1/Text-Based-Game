@@ -38,4 +38,9 @@ public class Fist implements Weapon {
     @Override
     public void pickUpAmmo(int bullets) {}
 
+    @Override
+    public boolean loseAmmo() {
+        return true;
+    }
+
 }

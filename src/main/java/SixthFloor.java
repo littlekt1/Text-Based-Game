@@ -74,11 +74,12 @@ public class SixthFloor {
         } else if (userInput == 2) {
             if (player.getDexterity() >= 2) {
                 System.out.println("You nimbly dive behind the nearest desk, barely avoid the zombies line of sight.");
+                if (player.weaponCheck("pistol")) {
+
+                }
             } else {
                 System.out.println("You trip over and fell, the zombies spot you and hungrily pour over.");
             }
-        } else {
-
         }
     }
 

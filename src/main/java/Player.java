@@ -228,6 +228,9 @@ public class Player {
             System.out.println("You have no use for this right now. ");
         }
     }
+    public boolean loseAmmo() {
+        return weaponCheck("pistol") && weapons.get("pistol").loseAmmo();
+    }
 
     public List<Object> attack() {
         handlePoison();
@@ -243,7 +246,6 @@ public class Player {
         int userInput = 0;
         userInput = Controller.pickOption(weapons.size());
         Weapon weaponInUse = weapons.get(weaponsArray[userInput - 1]);
-
         return Arrays.asList(weaponsArray[userInput - 1], weaponInUse.getDamage(strength, dexterity));
     }
 

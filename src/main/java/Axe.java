@@ -12,6 +12,11 @@ public class Axe implements Weapon {
     @Override
     public void pickUpAmmo(int bullets) {}
 
+    @Override
+    public boolean loseAmmo() {
+        return true;
+    }
+
 
     public int getDamage(int strength, int dexterity) {
         int accuracy;

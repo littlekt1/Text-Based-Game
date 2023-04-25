@@ -9,6 +9,7 @@ public class SixthFloorTest {
         player.pickUpAmmo(10);
         player.setCurrentLocation(6);
         SixthFloor.runSixthFloor(player);
+
     }
 
 }

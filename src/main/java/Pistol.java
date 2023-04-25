@@ -19,6 +19,18 @@ public class Pistol implements Weapon {
         name = "Glock 9";
     }
 
+    @Override
+    public boolean loseAmmo() {
+        if (ammo >= 1) {
+            ammo--;
+            if (ammo == 0) {
+                name = "Glock 9 (out of ammo).";
+            }
+            return true;
+        }
+        return false;
+    }
+
 
     public int getDamage(int strength, int dexterity) {
         if (ammo <= 0) {
